@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "name": "USerComponent",
+      "setup": "export CHROME_BIN=/usr/bin/chromium-browser && sudo npm install -g @angular/cli && npm install",
+      "run": "ng test --include=src/app/user/user.component.spec.ts --browsers ChromeHeadless --watch=false",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 25
+    },
+    {
+      "name": "Restaurant-Menu",
+      "setup": "",
+      "run": "ng test --include=src/app/restaurant-menu/restaurant-menu.component.spec.ts --browsers ChromeHeadless --watch=false",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 25
+    },
+    {
+      "name": "Restaurant",
+      "setup": "",
+      "run": "ng test --include=src/app/restaurant/restaurant.component.spec.ts --browsers ChromeHeadless --watch=false",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 25
+    }
+  ]
+}
