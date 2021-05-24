@@ -1,0 +1,111 @@
+{
+  "Restaurant": [
+    {
+      "restaurantname": "Paradise",
+      "id": 1,
+      "restaurantowner": "niha",
+      "menu": [
+        {
+          "id": 1,
+          "item": "Biryani",
+          "price": 190
+        },
+        {
+          "id": 2,
+          "item": "rice",
+          "price": 190
+        }
+      ]
+    },
+    {
+      "restaurantname": "apoorva",
+      "id": 2,
+      "restaurantowner": "niharika",
+      "menu": [
+        {
+          "id": 1,
+          "item": "Biryani",
+          "price": 190
+        },
+        {
+          "id": 2,
+          "item": "rice",
+          "price": 190
+        }
+      ]
+    },
+    {
+      "restaurantname": "harika1",
+      "restaurantowner": "pooja",
+      "id": 3,
+      "menu": [
+        {
+          "id": 1,
+          "item": "rice",
+          "price": 100
+        },
+        {
+          "item": "biryani",
+          "price": 200,
+          "id": 2
+        }
+      ]
+    }
+  ],
+  "Menu": [
+    {
+      "id": 1,
+      "item": "rice",
+      "price": 100
+    },
+    {
+      "item": "biryani",
+      "price": 200,
+      "id": 2
+    }
+  ],
+  "Login": [
+    {
+      "id": 1,
+      "username": "niha",
+      "password": "niha1208",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "username": "niharika",
+      "password": "niha1208",
+      "role": "restaurant"
+    },
+    {
+      "id": 3,
+      "username": "teja",
+      "password": "niha1208",
+      "role": "user"
+    },
+    {
+      "username": "tchundur",
+      "password": "niha1208",
+      "role": "user",
+      "id": 4
+    },
+    {
+      "username": "sri",
+      "password": "niha1208",
+      "role": "user",
+      "id": 5
+    },
+    {
+      "username": "harika",
+      "password": "niha1208",
+      "role": "user",
+      "id": 6
+    },
+    {
+      "username": "harika1",
+      "password": "restaurant",
+      "role": "restaurant",
+      "id": 7
+    }
+  ]
+}

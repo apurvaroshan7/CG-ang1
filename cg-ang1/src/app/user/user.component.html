@@ -1,0 +1,50 @@
+<div class="col-xs-12 col-md-12">
+    <h1 align="center" style="color: #37474F;"> Your Orders</h1>
+    <div class="row">
+      <div class="col-xs-5 col-md-5">
+        <table class="table" align="center" id="order">
+  
+          <tr>
+            <th>restaurantname</th>
+            <th>Select Restaurant</th>
+  
+          </tr>
+  
+          <tr *ngFor="let restaurants of restaurants">
+            <td>{{restaurants.restaurantname}}</td>
+            <td>
+              <button class="btn btn-primary" (click)="onRestaurant(restaurants.id)">select</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-xs-7 col-md-7" *ngIf="check">
+        <!-- <div align="right">
+            <button mat-icon-button>
+              <mat-icon (click)="onclose()" svgIcon="close"></mat-icon>
+            </button>
+          </div>
+        </div> -->
+
+        <table class="table" align="center" id="order">
+
+            <tr>
+              <th>Item</th>
+              <th>Price</th>
+    
+            </tr>
+    
+            <tr *ngFor="let menu of menu">
+              <td>{{menu.item}}</td>
+              <td>{{menu.price}}</td>
+              
+            </tr>
+        </table>
+        <button class="btn btn-primary" (click)=onPlaceorder()>Place Order</button>
+
+
+        
+    </div>
+    <br>
+  </div>
+  

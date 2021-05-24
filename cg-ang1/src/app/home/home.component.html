@@ -1,0 +1,85 @@
+<!-- <mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>CarWash</span>
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav class="sidenav" opened="false"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      >
+    <mat-toolbar>Menu</mat-toolbar>
+        <mat-nav-list >
+          <a mat-list-item *ngIf = "read()=='admin'" routerLinkActive='active' [routerLink]="['/menulist']" ><span>Menu List</span></a>
+          <a mat-list-item *ngIf = "read()=='admin'" routerLinkActive='active' [routerLink]="['/restlist']" ><span>Restaurant List</span></a>
+          <a mat-list-item *ngIf = "read()=='restaurant'" routerLinkActive='active' [routerLink]="['/restmenu']" ><span>Restaurant Menu</span></a>
+          <a mat-list-item *ngIf = "read()=='user'" routerLinkActive='active' [routerLink]="['/user']" ><span>Place Order</span></a>
+         <!-- <a mat-list-item *ngIf = "read()=='customer'" routerLinkActive='active' [routerLink]="['/cardetails']" ><span>Your CarDetails</span></a>
+          <a mat-list-item *ngIf = "read()=='customer'" routerLinkActive='active' [routerLink]="['/locations']" ><span>Your Locations</span></a>
+          <a mat-list-item *ngIf = "read()=='customer'" routerLinkActive='active' [routerLink]="['/payment']" ><span>Your PaymentDetails</span></a>
+          <a mat-list-item *ngIf = "read()=='customer'" routerLinkActive='active' [routerLink]="['/ser']" ><span>Shedule Now</span></a>
+          <a mat-list-item *ngIf = "read()=='customer'" routerLinkActive='active' [routerLink]="['/customerhistory']" ><span>Your Orders</span></a>
+          <a mat-list-item *ngIf = "read()=='washer'" routerLinkActive='active' [routerLink]="['/washhistory']">History</a>
+          <a mat-list-item *ngIf = "read()=='admin'" routerLinkActive='active' [routerLink]="['/washer']">Washers Details</a>
+          <a mat-list-item *ngIf = "read()=='admin'" routerLinkActive='active' [routerLink]="['/cusdetails']">Customer Details</a>
+          <a mat-list-item *ngIf = "read()=='admin'" routerLinkActive='active' [routerLink]="['/admindetails']">Admin Details</a>
+          <a mat-list-item *ngIf = "read()=='admin' || read()=='washer'" routerLinkActive='active' [routerLink]="['/bookingrequests']">Booking Requests</a>
+          <a mat-list-item routerLinkActive='active' [routerLink]="['/login']" ><span>AboutUs</span></a> -->
+    </mat-nav-list>
+  
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button>
+        <mat-icon class="change" svgIcon="menu" (click)="sidenav.toggle()"></mat-icon>
+      </button>
+
+        <span class="al" style="text-align: center;">Restaurant </span>
+        <span class="spacer"></span>
+        <button mat-icon-button [matMenuTriggerFor]="menu"  >
+          <mat-icon  class="change"  style="text-align: center;" svgIcon="account" ></mat-icon> 
+        </button>
+        <mat-menu #menu="matMenu"> 
+        <button mat-menu-item *ngIf = "readvalues()=='false'" routerLinkActive='active' [routerLink]="['/login']">
+        <mat-icon  svgIcon="account"></mat-icon>
+        <span>Login</span>
+        </button>
+
+        <button mat-menu-item *ngIf="readvalues()=='true'" (click)="logout()">
+                    <mat-icon svgIcon="account"></mat-icon> 
+                    <span>Logout</span>
+        </button>
+        <button mat-menu-item *ngIf = "readvalues()=='false'" routerLinkActive='active' [routerLink]="['/register']">
+          <mat-icon svgIcon="account" ></mat-icon> 
+          <span>Registration</span>
+        </button>
+        </mat-menu>
+     
+      
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

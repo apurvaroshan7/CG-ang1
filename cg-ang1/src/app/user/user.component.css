@@ -1,0 +1,76 @@
+#order {
+    z-index: 15;
+    position: relative;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    box-sizing: border-box;
+    margin-right: 10px;
+    overflow: hidden;
+    border-radius: 15px;
+  
+  }
+ 
+  
+  .mat-icon {
+    cursor: pointer;
+  }
+  
+  #track {
+    z-index: 15;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 15px;
+  
+  }
+  
+  .mat-icon-button ::ng-deep .mat-button-focus-overlay {
+    display: none;
+  }
+  
+  button:focus {
+    outline: none !important;
+  
+  }
+  
+  .imgBox {
+    opacity: 1;
+  }
+  
+  .imgBox:hover {
+    opacity: 0.3;
+  }
+  
+  .solid {
+    border-top: 3px solid #bbb;
+  }
+  
+  #imageBorderRadius {
+    border-radius: 15px;
+  }
+  #underline{
+      border-bottom : solid 1px #37474F;
+      
+  }
+  
+  #loc th ,#loc td
+  {
+      border: 1px solid #ddd;
+  }
+  
+  .bu button
+  {
+      outline: none;
+        background-color: #37474F;
+        border-radius: 4px;
+        width: 20%;
+        height: 100%;
+        color: #fff;
+        padding:5px 10px;
+        text-transform: uppercase;
+        cursor: pointer;
+  }
+  
