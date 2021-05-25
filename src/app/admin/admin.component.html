@@ -1,0 +1,22 @@
+<div align="right" mat-dialog-title>
+    <button mat-icon-button>
+      <mat-icon (click)="onclose()" svgIcon="close"></mat-icon>
+    </button>
+  </div>
+  
+  <form [formGroup]="regForm" novalidate (ngSubmit)="onAssign()">
+      <div class="form-group">
+    <mat-select class="form-control" placeholder="Restaurant name" formControlName="restaurantname" id="restaurantname"
+   required>
+      <mat-option *ngFor="let x of restaurant" [value]="x.restaurantname">
+        {{x.restaurantname}}
+      </mat-option>
+    </mat-select>
+    </div>
+  
+    <div class="form-group">
+    <button class="btn btn btn-primary" [disabled]="regForm.pristine || regForm.invalid" type="submit">Assign Menu</button>
+  </div>
+  
+  </form>
+  

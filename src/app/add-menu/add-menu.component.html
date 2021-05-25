@@ -1,0 +1,54 @@
+<div class="loginFrom form">
+    <div class="form-panel one">
+    
+      <h3  align="center">Add Menu Item</h3>
+      </div>
+      
+      <div class="form-content">
+        <form [formGroup]="regForm" novalidate (ngSubmit)="onAdd()">
+          
+              <div class="form-group">
+                <label>Item</label>
+                <input type="text" class="form-control" formControlName="item"
+                  id="item" [(ngModel)]="menu.item" />
+              </div>
+              <div
+                *ngIf="regForm.controls['item'].invalid && (regForm.controls['item'].dirty || regForm.controls['item'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="regForm.controls['item'].errors.required">
+                  <b> item is required.</b>
+                </div>
+                
+              </div>
+      
+              <div class="form-group">
+                <label>Price</label>
+                <input type="number" class="form-control" formControlName="price" id="price"
+                 [(ngModel)]="menu.price" />
+              </div>
+              <div
+                *ngIf="regForm.controls['price'].invalid && (regForm.controls['price'].dirty || regForm.controls['price'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="regForm.controls['price'].errors.required">
+                  <b> price is required.</b>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-6 col-md-6">
+                  <div class="form-group">
+                    <button class="btn btn-primary" [disabled]="regForm.pristine || regForm.invalid"   type="submit">Add</button>
+                </div>
+                </div>
+                <div class="col-xs-6 col-md-6">
+                  <div class="form-group">
+                    <button class="btn btn-primary"  (click)="onCancel()" type="submit">Cancel</button>
+                </div>
+                </div>
+      
+              </div>
+        </form>
+   
+      </div>
+      <br>
+  </div> 
+   

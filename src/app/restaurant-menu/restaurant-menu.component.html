@@ -1,0 +1,25 @@
+<br>
+<h3>Hi Owner</h3>
+<h2  align="center">My Menu</h2>
+<br>
+<table mat-table align = "center" [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    
+    <!-- Position Column -->
+
+      <ng-container matColumnDef="item">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header > Item</th>
+          <td mat-cell *matCellDef="let element"> {{element.item}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header > Price </th>
+            <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+          </ng-container>
+
+    <!-- Weight Column -->
+    
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <br>

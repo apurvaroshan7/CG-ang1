@@ -1,0 +1,44 @@
+<br>
+<h2>Hi Admin</h2>
+<h2  align="center">Restaurant Details</h2>
+<div align="center">
+    <button class="btn btn-primary" routerLinkActive='active'  [routerLink]="['/addrest']" >Add</button>
+</div>
+  
+  <!-- <div align="center" class="bu">
+    <button routerLinkActive='active' [routerLink]="['/cusregister',cus()]">Add Customer</button>
+</div> -->
+<br>
+<table mat-table align = "center" [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    
+    <!-- Position Column -->
+
+      <ng-container matColumnDef="restaurantname">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header > Restaurant</th>
+          <td mat-cell *matCellDef="let element"> {{element.restaurantname}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="restaurantowner">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header > Owner </th>
+            <td mat-cell *matCellDef="let element"> {{element.restaurantowner}} </td>
+          </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Edit </th>
+      <td mat-cell *matCellDef="let element"> <button mat-icon-button routerLinkActive='active' [routerLink]="['/editrest',element.id]">
+        <mat-icon svgIcon="edit"></mat-icon>
+        
+      </button> </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Delete </th>
+        <td mat-cell *matCellDef="let element"> <mat-icon svgIcon="delete"
+            (click)="onDelete(element.id)"></mat-icon> </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <br>
