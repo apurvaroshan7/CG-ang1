@@ -1,4 +1,4 @@
-export class Menu
+export class menu
 {
     id: number;
     item: string;
