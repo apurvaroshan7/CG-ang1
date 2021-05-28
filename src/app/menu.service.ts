@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { catchError, tap, map } from'rxjs/operators';
-import { Menu } from './Menu';
+import { Menu } from './menu';
 
 @Injectable({
   providedIn: 'root'
